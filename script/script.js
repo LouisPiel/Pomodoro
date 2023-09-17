@@ -1,34 +1,45 @@
+
 let Travail = document.getElementById("travail");
 let Pause = document.getElementById("pause");
 
-var TravailTemps = 1;
-let PauseTemps = 1;
+// Déclaration des variables pour initialiser le temps pour le travail et pour la pause.
+var TempsT = 1;
+var TempsP = 1;
+
+//Variable permettant de initialiser les secondes à 0.
 let secondes = 0;
 
+
+//Fonction pour afficher le temps.
 function affichageTemps (chrono) {
-    let chronoString = chrono.toString()
-    chronoString = chronoString.length < 2 ? '0' + chronoString : chronoString
-    return chronoString
+    let affichageChrono = chrono.toString()
+    affichageChrono  = affichageChrono.length < 2 ? '0' + affichageChrono  : affichageChrono 
+    return affichageChrono 
   }
 
 
-
+//Fonction pour afficher le temps sur la page.
 window.onload = () => {
-    document.getElementById('minutes').innerHTML = affichageTemps(TravailTemps);
+    document.getElementById('minutes').innerHTML = affichageTemps(TempsT);
     document.getElementById('secondes').innerHTML = affichageTemps(secondes);
 }
+
 
 function démarrer() {
     document.getElementById('démarrer').style.display = 'none';
     document.getElementById('rénitialiser').style.display = 'block';
 
+    //Variable qui permet de faire en sorte que les secondes n'affiche pas 60.
     secondes = 59;
 
-    let TravailMinute = TravailTemps - 1;
-    let PauseMinute = PauseTemps - 1;
+    //Variables qui permet de faire passer décroître les minutes
+    let TravailMinute = TempsT - 1;
+    let PauseMinute = TempsP - 1;
 
+    // boolean qui permet d'inititialiser le changement du travail à pause à fausse.
      changement = false;
 
+     //Fonction pour permettre que le temps s'écoule.
     let temps = () => {
         document.getElementById('minutes').innerHTML = affichageTemps(TravailMinute);
         document.getElementById('secondes').innerHTML = affichageTemps(secondes);
@@ -45,7 +56,7 @@ function démarrer() {
                     TravailTemps.classList.remove('active');
                     PauseTemps.classList.add('active');
                 } else {
-                    TravailMinute = TravailTemps;
+                    TravailMinute = TempsT;
                     secondes = 1;
                     changement = false;
 
@@ -63,7 +74,7 @@ function démarrer() {
 }
 
 
-
+//Fonction pour rénitialiser le temps à la valeur de départ.
 function rénitialiser() {
     location.reload();
 }
