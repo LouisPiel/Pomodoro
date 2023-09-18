@@ -1,10 +1,12 @@
 
 let Travail = document.getElementById("travail");
 let Pause = document.getElementById("pause");
+document.getElementById("démarrer").style.display = 'block';
+document.getElementById("rénitialiser").style.display = 'none';
 
 // Déclaration des variables pour initialiser le temps pour le travail et pour la pause.
 var TempsT = 30;
-var TempsP = 30;
+var TempsP = 5;
 
 //Variable permettant de initialiser les secondes à 0.
 let secondes = 0;
@@ -27,11 +29,14 @@ window.onload = () => {
 
 function démarrer() {
     //Affiche les 2 blocs
-    document.getElementById("démarrer").style.display = 'block';
+    document.getElementById("démarrer").style.display = 'none';
     document.getElementById("rénitialiser").style.display = 'block';
-    //la couleur de fond indique quel timer est activé.
-    document.getElementById("démarrer").style.backgroundColor = '#27EF16';
+
     document.getElementById("rénitialiser").style.backgroundColor = '#EC1010';
+    
+    //la couleur de fond indique quel temps est en train de s'écouler.
+    document.getElementById("travail").style.backgroundColor = '#27EF16';
+    document.getElementById("pause").style.backgroundColor = '#EC1010';
 
     //Variable qui permet de faire en sorte que les secondes n'affiche pas 60.
     secondes = 59;
@@ -53,23 +58,27 @@ function démarrer() {
             TravailMinute = TravailMinute - 1;
             if (TravailMinute == -1) {
                 if (!changement) {
+                    //On change de temps.
+                    document.getElementById("travail").style.backgroundColor = '#EC1010';
+                    document.getElementById("pause").style.backgroundColor = '#27EF16';
                     TravailMinute = PauseMinute;
+
                     secondes = 60;
                     changement = true;
                     TravailTemps.classList.remove('active');
                     PauseTemps.classList.add('active');
 
                     document.getElementById("démarrer").style.backgroundColor = '#EC1010';
-                    document.getElementById("rénitialiser").style.backgroundColor = '#27EF16';
                 } else {
+                    //On rechange le temps.
+                    document.getElementById("travail").style.backgroundColor = '#27EF16';
+                    document.getElementById("pause").style.backgroundColor = '#EC1010';
                     TravailMinute = TempsT;
                     secondes = 1;
                     changement = false;
 
                     PauseTemps.classList.remove('active');
                     TravailTemps.classList.add('active');
-                    document.getElementById("démarrer").style.backgroundColor = '#27EF16';
-                    document.getElementById("rénitialiser").style.backgroundColor = '#EC1010';
                     
 
                 }

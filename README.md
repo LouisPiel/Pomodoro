@@ -5,8 +5,9 @@ L'utilité du Pomodoro permet d'alterner temps de travail et temps de pause pour
 
 # Demarrage
 
-Pour démarrer le Pomodoro, il faut cliquer sur le bouton travail pour commencer a travailler.
+Pour démarrer le Pomodoro, il faut cliquer sur le bouton en bas du timer pour commencer a travailler.
 
 # Voir lequel est activé ou non
 
-Le bouton qui est en vert indique celui qui est en marche, le rouge celui qui est à l'arrêt.
+Le rectangle qui est en vert indique quel temps est en train de s'écouler, le rouge celui qui ne l'est pas.
+Les couleurs s'inversent lorsque le temps du travail s'est écoulé
