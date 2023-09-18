@@ -3,8 +3,8 @@ let Travail = document.getElementById("travail");
 let Pause = document.getElementById("pause");
 
 // Déclaration des variables pour initialiser le temps pour le travail et pour la pause.
-var TempsT = 30;
-var TempsP = 30;
+var TempsT = 1;
+var TempsP = 1;
 
 //Variable permettant de initialiser les secondes à 0.
 let secondes = 0;
@@ -26,8 +26,12 @@ window.onload = () => {
 
 
 function démarrer() {
-    document.getElementById('démarrer').style.display = 'none';
-    document.getElementById('rénitialiser').style.display = 'block';
+    //Affiche les 2 blocs
+    document.getElementById("démarrer").style.display = 'block';
+    document.getElementById("rénitialiser").style.display = 'block';
+    //la couleur de fond indique quel timer est activé.
+    document.getElementById("démarrer").style.backgroundColor = '#27EF16';
+    document.getElementById("rénitialiser").style.backgroundColor = '#EC1010';
 
     //Variable qui permet de faire en sorte que les secondes n'affiche pas 60.
     secondes = 59;
@@ -52,9 +56,11 @@ function démarrer() {
                     TravailMinute = PauseMinute;
                     secondes = 60;
                     changement = true;
-                    
                     TravailTemps.classList.remove('active');
                     PauseTemps.classList.add('active');
+
+                    document.getElementById("démarrer").style.backgroundColor = '#EC1010';
+                    document.getElementById("rénitialiser").style.backgroundColor = '#27EF16';
                 } else {
                     TravailMinute = TempsT;
                     secondes = 1;
