@@ -3,7 +3,6 @@
     justify-content: center;
     margin-top : 95px;
     font-size: 4.5rem;
-    border-radius:75%;
     width: 26.5em;
     height: 1em;
 }
@@ -29,7 +28,16 @@ body {
 }
 
 .cercle {
+    margin : auto;
     display : flex;
+    border-radius:75%;
+    width:160px;
+    height:160px;
+}
+
+#démarrer,
+#rénitialiser {
+    border-radius: 100px / 50px;
 }
 
 

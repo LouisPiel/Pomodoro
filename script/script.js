@@ -3,8 +3,8 @@ let Travail = document.getElementById("travail");
 let Pause = document.getElementById("pause");
 
 // Déclaration des variables pour initialiser le temps pour le travail et pour la pause.
-var TempsT = 1;
-var TempsP = 1;
+var TempsT = 30;
+var TempsP = 30;
 
 //Variable permettant de initialiser les secondes à 0.
 let secondes = 0;
