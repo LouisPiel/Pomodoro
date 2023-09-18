@@ -30,15 +30,21 @@ body {
 .cercle {
     margin : auto;
     display : flex;
-    border-radius:75%;
-    width:160px;
-    height:160px;
 }
 
 #démarrer,
 #rénitialiser {
-    border-radius: 100px / 50px;
+    width:200px;
+    height:200px;
+    border: 2px solid black;
+    margin : 8px;
 }
+
+#travail,
+#pause {
+    font-size : 2.8em;
+}
+
 
 
 

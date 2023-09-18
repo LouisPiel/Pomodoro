@@ -68,6 +68,8 @@ function démarrer() {
 
                     PauseTemps.classList.remove('active');
                     TravailTemps.classList.add('active');
+                    document.getElementById("démarrer").style.backgroundColor = '#27EF16';
+                    document.getElementById("rénitialiser").style.backgroundColor = '#EC1010';
                     
 
                 }
