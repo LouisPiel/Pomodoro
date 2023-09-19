@@ -1,6 +1,8 @@
 
 let Travail = document.getElementById("travail");
 let Pause = document.getElementById("pause");
+
+//On affiche l'icône "démarrer" et on cache l'icône rénitialiser au début.
 document.getElementById("démarrer").style.display = 'block';
 document.getElementById("rénitialiser").style.display = 'none';
 
@@ -70,9 +72,11 @@ function démarrer() {
 
                     document.getElementById("démarrer").style.backgroundColor = '#EC1010';
                 } else {
-                    //On rechange le temps.
+                    //On rechange les couleurs de "travail" et "pause".
                     document.getElementById("travail").style.backgroundColor = '#27EF16';
                     document.getElementById("pause").style.backgroundColor = '#EC1010';
+
+                    //On rechange le temps.
                     TravailMinute = TempsT;
                     secondes = 1;
                     changement = false;
